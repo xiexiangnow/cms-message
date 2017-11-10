@@ -16,7 +16,10 @@
  ```shell
  git clone [git地址]
  ```
- 
+组件更新
+```shell
+composer update
+``` 
  根目录执行
  ```shell
  php artisan serve

@@ -91,6 +91,12 @@ Route::group([
     // - 用户管理
     Route::resource('user','UserController',['only'=>['index','create','store','edit','update','destroy']]);
 
+    //- 商品管理
+    Route::resource('goods','GoodsController',['only'=>['index','create','store','edit','update','destroy','show']]);
+
+    //图片上传
+    Route::any('upload','GoodsController@upload');
+
     Route::get('send','ArticleController@sendSMS');
 
     Route::get('queue','QueueController@queue');

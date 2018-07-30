@@ -74,6 +74,23 @@
         </li>
         <li class="submenu">
             <a href="#">
+                <i class="icon icon-th"></i>
+                <span>商品管理管理</span>
+                @if((new \App\Helpers\UserHelp())->isAdmin())
+                    <span class="label label-important">2</span>
+                @else
+                    <span class="label label-important">1</span>
+                @endif
+            </a>
+            <ul>
+                @if((new \App\Helpers\UserHelp())->isAdmin())
+                    <li><a class="menu_a" link="{{url('admin/goods/create')}}"><i class="icon icon-caret-right"></i>添加商品</a></li>
+                @endif
+                <li><a class="menu_a" link="{{url('admin/goods')}}"><i class="icon icon-caret-right"></i>商品列表</a></li>
+            </ul>
+        </li>
+        <li class="submenu">
+            <a href="#">
                 <i class="icon icon-group"></i>
                 <span>用户管理</span>
                 @if((new \App\Helpers\UserHelp())->isAdmin())

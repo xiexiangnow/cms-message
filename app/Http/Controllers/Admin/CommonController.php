@@ -52,7 +52,7 @@ class CommonController extends Controller
         if ($err !== null) {
             return false;
         } else {
-            return $spaceFileName;
+            return env('QINIU_FERFIX_URL').$spaceFileName;
         }
     }
 

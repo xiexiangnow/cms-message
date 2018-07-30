@@ -44,7 +44,7 @@
                             @forelse($last_articles as $article)
                             <li>
                                 <div class="user-thumb"> <img width="40" height="40" alt="User" src="{{asset('assets/msg-style/img/demo/av1.jpg')}}"> </div>
-                                <div class="article-post"> <span class="user-info"> {{str_limit($article->title,100)}} | {{$article->created_at}} | {{$article->category['cate_name']}} </span>
+                                <div class="article-post"> <span class="user-info" style="font-size: 14px"> {{str_limit($article->title,100)}} | {{$article->created_at}} | {{$article->category['cate_name']}} </span>
                                     <p><a href="{{route('admin.article.show',['id'=>$article->id])}}" title="点击跳转">{{str_limit($article->description,400)}}</a> </p>
                                 </div>
                             </li>

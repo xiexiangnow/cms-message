@@ -1,18 +1,13 @@
 <?php
-
 namespace App\Models;
-
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
 class Article extends Model
 {
     use softDeletes;
-
     const LIST_SIZE = 20;           //每页显示条数
     const LAST_ARTICLE_LIMIT = 5;   //最新文章
-
     /**
      * @param $where
      * @return mixed
@@ -20,11 +15,9 @@ class Article extends Model
     public function get($where)
     {
         $article = new Article();
-
         if($where['cate_id']){
             $article = $article->where('cate_id',$where['cate_id']);
         }
-
         if($where['keyword']){
             $article = $article->where('title','like','%'.$where['keyword'].'%');
         }
@@ -33,7 +26,6 @@ class Article extends Model
             ->orderBy('id','DESC')
             ->paginate(self::LIST_SIZE);
     }
-
     /**
      * @param $id
      * @return bool|mixed|null
@@ -42,7 +34,6 @@ class Article extends Model
     {
         return Article::where('id',$id)->delete();
     }
-
     /**
      * @param $data
      * @return mixed
@@ -63,7 +54,6 @@ class Article extends Model
             'created_at'  => Carbon::now()
         ]);
     }
-
     /**
      * @param $data
      * @return mixed
@@ -83,7 +73,6 @@ class Article extends Model
             'updated_at'  => Carbon::now()
         ]);
     }
-
     /**
      * @param $id
      * @return mixed
@@ -92,7 +81,6 @@ class Article extends Model
     {
         return Article::find($id);
     }
-
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -100,7 +88,6 @@ class Article extends Model
     {
         return $this->belongsTo('App\Models\Category','cate_id', 'cate_id');
     }
-
     /**
      * @return mixed
      */
@@ -111,7 +98,6 @@ class Article extends Model
            ->take(self::LAST_ARTICLE_LIMIT)
            ->get();
     }
-
     /**
      * @param $cateId
      * @return mixed
@@ -120,7 +106,6 @@ class Article extends Model
     {
         return Article::where('cate_id',$cateId)->count();
     }
-
     /**
      * @return mixed
      */
@@ -128,7 +113,6 @@ class Article extends Model
     {
         return Article::count();
     }
-
     /**
      * @return mixed
      */

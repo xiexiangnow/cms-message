@@ -66,7 +66,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <a class="btn btn-primary btn-large pull-right" href="#">立即购买</a>
+                            <a class="btn btn-primary btn-large pull-right" href="{{url('admin/settlement',['id'=>$detail->id])}}">立即购买</a>
                             <div class="row-fluid">
                                {!! $detail->content !!}
                             </div>

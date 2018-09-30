@@ -18,7 +18,7 @@
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-                {{--<li><a href="#"><i class="icon-user"></i> 个人资料</a></li>--}}
+                <li><a href="#"><i class="icon-user"></i> 个人积分：{{$integral}}</a></li>
                 <li class="divider"></li>
                 <li><a class="menu_a" link="{{url('admin/modify_pass')}}"><i class="icon-check"></i> 修改密码</a></li>
                 <li class="divider"></li>
@@ -77,7 +77,7 @@
                 <i class="icon icon-th"></i>
                 <span>商品管理管理</span>
                 @if((new \App\Helpers\UserHelp())->isAdmin())
-                    <span class="label label-important">2</span>
+                    <span class="label label-important">3</span>
                 @else
                     <span class="label label-important">1</span>
                 @endif
@@ -87,6 +87,7 @@
                     <li><a class="menu_a" link="{{url('admin/goods/create')}}"><i class="icon icon-caret-right"></i>添加商品</a></li>
                 @endif
                 <li><a class="menu_a" link="{{url('admin/goods')}}"><i class="icon icon-caret-right"></i>商品列表</a></li>
+                    <li><a class="menu_a" link="{{url('admin/orders')}}"><i class="icon icon-caret-right"></i>订单管理</a></li>
             </ul>
         </li>
         <li class="submenu">
@@ -94,7 +95,7 @@
                 <i class="icon icon-group"></i>
                 <span>用户管理</span>
                 @if((new \App\Helpers\UserHelp())->isAdmin())
-                    <span class="label label-important">3</span>
+                    <span class="label label-important">4</span>
                 @else
                     <span class="label label-important">2</span>
                 @endif
@@ -105,6 +106,9 @@
                 @endif
                 <li><a class="menu_a" link="{{url('admin/modify_pass')}}"><i class="icon icon-caret-right"></i>修改密码</a></li>
                 <li><a class="menu_a" link="{{url('admin/user')}}"><i class="icon icon-caret-right"></i>用户管理</a></li>
+                    @if((new \App\Helpers\UserHelp())->isAdmin())
+                    <li><a class="menu_a" link="{{url('admin/integral')}}"><i class="icon icon-caret-right"></i>积分充值</a></li>
+                    @endif
             </ul>
         </li>
     </ul>

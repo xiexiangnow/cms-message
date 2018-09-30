@@ -201,7 +201,10 @@ class ArticleController extends CommonController
     public function destroy(Request $request)
     {
         if (!(new UserHelp())->isAdmin()) {
-            abort(403, '无操作权限');
+            return response()->json([
+                'status' => 0,
+                'msg'    => '无操作权限！'
+            ]);
         }
         if(!$request->get('id')){
             return response()->json([
@@ -229,20 +232,20 @@ class ArticleController extends CommonController
      */
     public function sendSMS(Request $request)
     {
-        echo Redis::get('TEST');
-        echo Redis::get('my-test');
+//        echo Redis::get('TEST');
+//        echo Redis::get('my-test');
 //        Redis::set('test-mi','this is a test!!!');
 //        Redis::set('my-test','hello world!!!');
-
-
-
+//
+//
+//
 //       $re =  (new Curl())->post('http://m.5c.com.cn/api/send/index.php',
 //            [
 //                'username' => '18502368717',
 //                'password_md5' => md5('chongqing123'),
 //                'apikey'  => '7e5928edae03d71d252a01b31e11bbf5',
 //                'mobile'  => '18723426002,18502368717',
-//                'content' => urlencode('宝贝，当你收到这条短信的时候，我已经下班啦，你会问这是啥子短信，我负责任的告诉你：这是一条测试的短信！你要问是谁发出来的，我会告诉你：是你老公发来的！不用怀疑，我就是我不一样的烟火！！！--xiang'),
+//                'content' => urlencode('短信内容'),
 //                'encode' => 'UTF-8',
 //            ]);
 //        dd($re);

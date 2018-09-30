@@ -94,8 +94,30 @@ Route::group([
     //- 商品管理
     Route::resource('goods','GoodsController',['only'=>['index','create','store','edit','update','destroy','show']]);
 
-    //图片上传
+    // -商品结算页面
+    Route::get('settlement/{id}','GoodsController@settlement');
+
+    // - 商品创建订单/下单操作
+    Route::get('order/{id}','GoodsController@order');
+
+    // -订单列表页面
+    Route::get('orders','GoodsController@orders');
+
+    // - 订单删除
+    Route::delete('deleteOrder','GoodsController@deleteOrder');
+
+    //商品图片上传
     Route::any('upload','GoodsController@upload');
+
+    //签到
+    Route::any('checkin','CommonController@checkIn');
+
+    //充值积分页面
+    Route::get('integral','UserController@Integral');
+
+
+    // - 阿里云支付页面
+    Route::any('payPage','AlipayController@payPage');
 
     Route::get('send','ArticleController@sendSMS');
 

@@ -187,6 +187,7 @@
                             })
                         }
                     }).fail(function (data) {
+                        //网络错误
                         prompt('error', data.responseJSON.msg);
                     });
                 }

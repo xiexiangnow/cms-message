@@ -5,14 +5,6 @@
     <style>
         #content #content-header #breadcrumb {width: 100%;z-index: 20;background: #fff;height: 40px}
         #content #content-header #breadcrumb a{line-height: 45px;padding: 4px 10px}
-        .span2 {height: 250px;border:1px #ccc solid;padding: 3px}
-        .span2 .pic{width: 100%;height: 150px;float: left}
-        .span2:hover{border:1px #02B77D solid}
-        .span2 .description {padding: 5px}
-        .span2 .title{height: 40px;}
-        .span2 .description .money {color: #F40;font-weight: 700;font-size: 16px}
-        .span2 .description .dingwei img {width: 20px;height: 20px}
-
     </style>
     <div id="content">
         <div id="content-header">
@@ -26,36 +18,84 @@
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span12">
-                    <div class="widget-box">
-                        <div class="widget-title"> <span class="icon"> <i class="icon-picture"></i> </span>
-                            <h5>列表</h5>
-                        </div>
-                        <div class="widget-content">
-                            <ul class="thumbnails">
-                                @forelse($goods as $good)
-                                <li class="span2"><a href="{{route('admin.goods.show',['id' => $good->id])}}"> <img src="{{ $good->pic_path }}" alt="" class="pic">
-                                    <div class="description">
-                                       <span class="money">￥{{$good->money}}</span>
-                                        <span style="float: right;color: #888">已有100付款</span>
-                                       <div class="title">{{ str_limit($good->title,40) }}</div>
-                                        <div class="dingwei">
-                                            <img src="{{ asset('assets/msg-style/img/dingwei.png') }}" alt="">
-                                            浙江 金华
-                                        </div>
-                                    </div>
-                                    </a>
-                                </li>
+                    <form action="" method="get" id="list-form">
+                        <div class="widget-box">
+                            <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+                                <h5>商品</h5>
+                                <a href="javascript:void(0)" onclick="submitForm()" class="btn btn-info btn" style="margin-top: 4px;float: right;margin-right: 10px">搜索</a>
+                                <input type="text" name="keyword" style="margin-top: 4px;float: right;font-size: 10px;height: 18px" value="" placeholder="请输入搜索关键字...">
+                            </div>
+                            <div class="widget-content ">
+                                <table class="table table-bordered table-striped with-check">
+                                    <thead>
+                                    <tr>
+                                        <th class="tc" width="5%">ID</th>
+                                        <th class="tc" width="7%">商品图片</th>
+                                        <th>分类</th>
+                                        <th width="16%">标题</th>
+                                        <th>价格</th>
+                                        <th>邮费</th>
+                                        <th width="22%">描述</th>
+                                        <th width="12%">创建时间</th>
+                                        <th width="10%">操作</th>
 
-                               @empty
-                                    暂无数据
-                                @endforelse
-                            </ul>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @forelse($goods as $good)
+                                        <tr class="content-list">
+                                            <td class="tc">{{$good->id}}</td>
+                                            <td class="tc">
+                                                <img src="{{ $good->pic_path }}" alt="" style="width: 50px;height: auto;border-radius: 5px">
+                                            </td>
+                                            <td>
+                                                {{ $good->cate_id }}
+                                            </td>
+                                            <td>{{ str_limit($good->title,30) }}</td>
+                                            <td>{{ $good->money }}</td>
+                                            <td>{{ $good->postage }}</td>
+                                            <!--1:待付款；2：待发货；3、待收货；4；订单完成-->
+                                            <td>
+                                               {{ str_limit($good->description,40) }}
+                                            </td>
+                                            <td>{{ $good->created_at }}</td>
+                                            <td>
+                                                @if((new \App\Helpers\UserHelp())->isAdmin())
+                                                    {{--<a class="btn btn-danger btn-mini" href="">删除</a>--}}
+                                                @endif
+
+                                                    <a class="btn btn-info btn-mini" href="{{ route('admin.goods.show',['id' => $good->id]) }}">购买</a>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td class="tc" colspan="11">暂无数据</td>
+                                        </tr>
+                                    @endforelse
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <span style="margin-left: 10px;">共 {{ $goods->total() }} 条数据</span>
+                            <div class="pagination alternate right">
+                                <ul>
+                                    {{--<li class="disabled"><a href="#">Prev</a></li>--}}
+                                    {{--<li class="active"> <a href="#">1</a> </li>--}}
+                                    {{--<li><a href="#">2</a></li>--}}
+                                    {{--<li><a href="#">3</a></li>--}}
+                                    {{--<li><a href="#">4</a></li>--}}
+                                    {{--<li><a href="#">Next</a></li>--}}
+                                    <span style="float: right">{!! $goods->appends(Input::all())->render() !!}</span>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    </body>
 
+
+
+    </body>
 @endsection

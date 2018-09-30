@@ -151,4 +151,16 @@ class UserController extends CommonController
             'msg'    => '删除失败'
         ]);
     }
+
+    /**
+     * - 积分充值页面
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function Integral()
+    {
+        $params = [
+            'users' => User::getAll()
+        ];
+        return view('admin.user.integral',$params);
+    }
 }

@@ -28,8 +28,13 @@
             <li class="bg_lg"> <a href="{{url('admin/user')}}"> <i class="icon-shopping-cart"></i> 用户总数（{{$user_sum}}）</a> </li>
             <li class="bg_ly"> <a href="{{url('admin/article')}}"> <i class=" icon-globe"></i> 本月发布（{{$now_month_sum}}）</a> </li>
             <li class="bg_lo"> <a href="{{url('admin/modify_pass')}}"> <i class="icon-group"></i> 修改密码 </a> </li>
-            {{--<li class="bg_ls"> <a href="#"> <i class="icon-signal"></i> 222 </a> </li>--}}
             {{--<li class="bg_lb"> <a href="{{url('admin/modify_pass')}}"> <i class="icon-undo"></i> 修改密码 </a> </li>--}}
+
+            @if($is_check_in)
+            <li class="bg_ls"> <a href="javascript:void(0)" onclick="checkIn()" > <i class="icon-pushpin"></i> <span id="checkin_name">点击签到</span> </a> </li>
+            @else
+                <li class="bg_ls"> <a > <i class="icon-pushpin"></i> <span id="checkin_name">已签到</span> </a> </li>
+            @endif
         </ul>
     </div>
     <div class="container-fluid">
@@ -91,5 +96,31 @@
         <hr>
     </div>
 </div>
+<script>
+
+    // - 签到
+    function checkIn() {
+        $.post("{{url('admin/checkin')}}",function(data){
+            if(data.status == 1){
+                $.toast({
+                    heading: '提示信息',
+                    text: data.msg,
+                    position: 'top-right',
+                    stack: false
+                });
+                $("#checkin_name").text("已签到");
+            }else{
+                $.toast({
+                    heading: '提示信息',
+                    text: data.msg,
+                    position: 'top-right',
+                    stack: false,
+                    bgColor: '#FF1356',
+                    textColor: 'white'
+                });
+            }
+        });
+    }
+</script>
 </body>
 </html>

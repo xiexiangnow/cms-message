@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Article;
 use App\Models\User;
+use App\Services\UserService;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -24,7 +25,10 @@ class IndexController extends CommonController
      */
     public function index()
     {
-        return view('admin.index');
+        $params = [
+            'integral'  => User::getUserById(session('user')->id)->integral   //积分查询
+        ];
+        return view('admin.index',$params);
     }
 
     /**
@@ -34,11 +38,13 @@ class IndexController extends CommonController
      */
     public function info()
     {
+        $userService = new UserService();
         $result = [
             'content_sum'   => Article::getArticleSum(),
             'last_articles' => Article::getLastArticle(),
             'now_month_sum' => Article::getNowMonthSum(),
-            'user_sum'      => User::getUserSum()
+            'user_sum'      => User::getUserSum(),
+            'is_check_in'   => $userService->checkUserIsCheckIn()
         ];
         return view('admin.info',$result);
     }

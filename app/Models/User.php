@@ -46,6 +46,15 @@ class User extends Model
 
     /**
      * @param $id
+     * @return mixed
+     */
+    static public function getUserById($id)
+    {
+        return User::find($id);
+    }
+
+    /**
+     * @param $id
      * @return bool
      */
     static public function isSuperAdmin($id)
@@ -73,5 +82,32 @@ class User extends Model
             'created_at'  => Carbon::now(),
             'updated_at'  => Carbon::now()
         ]);
+    }
+
+    /**
+     * - 修改用户信息
+     * @param $id
+     * @param $data
+     * @return mixed
+     */
+    static public function updateUser($id, $data)
+    {
+        return User::where(['id'=>$id])->update($data);
+    }
+
+    /**
+     * - 签到积分自增
+     * @param $id
+     * @param $value
+     * @return mixed
+     */
+    static public function incrementIntegral($id, $value)
+    {
+        $user = User::getUserById($id);
+        if(!$user->integral){
+            return User::where(['id' => $id])->update(['integral' => 1]);
+        }else{
+            return User::where(['id' => $id])->increment('integral',$value);
+        }
     }
 }

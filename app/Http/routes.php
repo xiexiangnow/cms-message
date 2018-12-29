@@ -115,6 +115,9 @@ Route::group([
     //充值积分页面
     Route::get('integral','UserController@Integral');
 
+    //ipr管理员信息
+    Route::resource('manager','ManagerController',['only' => ['index','show']]);
+
 
     // - 阿里云支付页面
     Route::any('payPage','AlipayController@payPage');

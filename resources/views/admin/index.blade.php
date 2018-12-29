@@ -4,7 +4,7 @@
 <body>
 <!--Header-part-->
 <div id="header">
-    <h1><a href="{{ url('admin/info') }}">规章管理系统</a></h1>
+    <h1><a href="{{ url('admin/info') }}">内容管理系统</a></h1>
 </div>
 <!--close-Header-part-->
 
@@ -108,6 +108,9 @@
                 <li><a class="menu_a" link="{{url('admin/user')}}"><i class="icon icon-caret-right"></i>用户管理</a></li>
                     @if((new \App\Helpers\UserHelp())->isAdmin())
                     <li><a class="menu_a" link="{{url('admin/integral')}}"><i class="icon icon-caret-right"></i>积分充值</a></li>
+                    @endif
+                    @if((new \App\Helpers\UserHelp())->isAdmin())
+                        <li><a class="menu_a" link="{{url('admin/manager')}}"><i class="icon icon-caret-right"></i>管理员信息</a></li>
                     @endif
             </ul>
         </li>

@@ -1,0 +1,32 @@
+*{margin: 0;padding: 0;border: 0;list-style: none;text-decoration: none;color: inherit;font-weight: normal;font-family: "微软雅黑";box-sizing: border-box;font-style: normal;}
+body{width: 100%;overflow-x: hidden;background: url(../image/top_bg.png) top left no-repeat;background-size: 100%;}
+img{vertical-align: middle;max-width: 100%;}
+a:hover,a:active,a:visited,a:link,a:focus{-webkit-tap-highlight-color: transparent;outline:none;text-decoration: none;
+}
+/*头像*/
+.head .img{width: 1.45rem;height: 1.45rem;background: #FFFFFF;border-radius: 50%;margin: 0 auto;margin-top: 1.25rem;text-align: center;overflow: hidden;}
+.head img{width: 1.25rem;}
+.head p{text-align: center;color: #FFFFFF;font-size: .24rem;padding-top: .15rem;}
+/*登陆表单*/
+form {width: 100%;height: auto;overflow: hidden;padding: 1.85rem .45rem .45rem .45rem;}
+form .item{display: flex;align-items: center;height: .85rem;margin-bottom: .35rem;font-size: .30rem;color: #333333;}
+form .item input{width: 100%;height: 100%;display: inline-block;border: .01rem solid #ebebeb;border-radius: .85rem;box-shadow: 0px 0px 10px rgba(200,200,200,.1);padding-left: .8rem;outline: none;}
+form .item input.name{background: url(../image/icon-phone.png) left .3rem center no-repeat;background-size: .23rem .35rem;}
+form .item input.vcode{background: url(../image/icon-verify.png) left .3rem center no-repeat;background-size: .33rem .33rem;}
+form .item input.password{background: url(../image/icon-lock.png) left .3rem center no-repeat;background-size: .22rem .32rem;}
+form .item span{flex-shrink: 0;display: inline-block;width: 1.6rem;margin-left: .2rem;height: 100%;line-height: .85rem;border-radius: .85rem;background: #1f6ecf;font-size: .24rem;color: #fff;text-align: center;}
+form .item span.disabled{background: #808080;}
+form p{text-align: center;color: #333333;font-size: .24rem;padding-top: .2rem;}
+form .submit{padding: .2rem .2rem;}
+form .submit button{height: .85rem;line-height: .85rem;text-align: center;font-size: .34rem;color: #FFFFFF;border-radius: .85rem;outline: none;box-shadow: 0 .15rem .15rem rgba(31,110,207,.2);display: inline-block;width: 100%;background: #1f6ecf;}
+/*第三方登陆*/
+.other-login p{text-align: center;position: relative;display: flex;align-items: center;justify-content: center;width: 3.7rem;margin: 0 auto;}
+.other-login p:after{content: "";height: .01rem;width: 100%;background: #808080;top: 50%;transform: translateY(-50%);position: absolute;}
+.other-login p span{display: inline-block;padding: .1rem .3rem;background: #FFFFFF;color: #808080;font-size: .22rem;z-index: 2;}
+.other-login .third ul{display: flex;align-items: center;justify-content: center;}
+.other-login .third ul li img{width: .66rem;height: .66rem;margin: 0 .25rem;}
+/*尾部*/
+.footer{text-align: center;padding-top: .3rem;}
+.footer img{display: inline-block;width: 1.07rem;height: .35rem;}
+.footer p{font-size: .20rem;color: #666666;text-align: center;padding: .1rem 0 .4rem 0;letter-spacing: .01rem;}
+.footer p a{color: #078dda;}

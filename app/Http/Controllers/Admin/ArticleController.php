@@ -11,8 +11,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Validator;
+use Redis;
 use Symfony\Component\Console\Helper\Helper;
 
 
@@ -32,6 +32,7 @@ class ArticleController extends CommonController
      */
     public function index(Article $article,Request $request)
     {
+
         $where = [
             'cate_id' => $request->get('cate_id'),
             'keyword' => trim($request->get('keyword'))

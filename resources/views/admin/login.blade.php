@@ -47,7 +47,7 @@
 			</div>
 		</div>
 		@if(session('msg'))
-			<p style="color:red">{{session('msg')}}</p>
+			<p style="color:red;">{{session('msg')}}</p>
 		@endif
 		<div class="form-actions">
 			<span class="pull-left"><a href="#" class="flip-link btn btn-info" id="to-recover">忘记密码？</a></span>

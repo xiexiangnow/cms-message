@@ -95,7 +95,7 @@
                 <i class="icon icon-group"></i>
                 <span>用户管理</span>
                 @if((new \App\Helpers\UserHelp())->isAdmin())
-                    <span class="label label-important">4</span>
+                    <span class="label label-important">5</span>
                 @else
                     <span class="label label-important">2</span>
                 @endif
@@ -111,6 +111,9 @@
                     @endif
                     @if((new \App\Helpers\UserHelp())->isAdmin())
                         <li><a class="menu_a" link="{{url('admin/manager')}}"><i class="icon icon-caret-right"></i>管理员信息</a></li>
+                    @endif
+                    @if((new \App\Helpers\UserHelp())->isAdmin())
+                        <li><a class="menu_a" link="{{url('admin/spider')}}"><i class="icon icon-caret-right"></i>美女图片</a></li>
                     @endif
             </ul>
         </li>

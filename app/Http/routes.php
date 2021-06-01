@@ -55,7 +55,9 @@ Route::group([
 
 });
 
-
+/**
+ * 后端
+ */
 Route::group([
     'namespace'  => 'Admin',
     'middleware' => ['admin.login'],
@@ -118,6 +120,12 @@ Route::group([
     //ipr管理员信息
     Route::resource('manager','ManagerController',['only' => ['index','show']]);
 
+    //美女图片
+    Route::resource('spider','SpiderController',['only' => ['index','show']]);
+
+    //美女图片首页显示
+    Route::any('goIndex','SpiderController@goIndex');
+
 
     // - 阿里云支付页面
     Route::any('payPage','AlipayController@payPage');
@@ -127,6 +135,60 @@ Route::group([
     Route::get('queue','QueueController@queue');
 
 });
+
+/**
+ *  前端
+ */
+Route::group([
+    'namespace'  => 'Front',
+    'prefix'     => 'front'
+], function () {
+    //前端首页
+    Route::resource('index','IndexController');
+
+    //性感美女
+    Route::resource('xinggan','XingGanController');
+
+
+    //性感美女，数据执行（过滤图片分类）
+    Route::get('exec_xinggan','ExecController@execXingGan');
+
+
+    //gearmand测试
+    Route::resource('gearmand','GearmandController');
+
+    Route::any('worker','GearmandController@worker');
+
+});
+
+/**
+ *  - 订购系统前端
+ */
+
+Route::group([
+    'namespace' => 'Order',
+], function () {
+    // - 登录界面
+    Route::any('order/login','LoginController@login');
+
+});
+
+Route::group([
+    'namespace'  => 'Order',
+    'prefix'     => 'order'
+], function () {
+    //前端首页
+    Route::resource('index','IndexController');
+
+//    //登录
+//    Route::resource('login','LoginController');
+
+    Route::any('worker','GearmandController@worker');
+
+});
+
+
+
 
 
 

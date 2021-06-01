@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Article extends Model
 {
     use softDeletes;
-    const LIST_SIZE = 20;           //每页显示条数
+    const LIST_SIZE = 6;           //每页显示条数
     const LAST_ARTICLE_LIMIT = 5;   //最新文章
     /**
      * @param $where

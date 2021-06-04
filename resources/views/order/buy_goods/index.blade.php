@@ -14,18 +14,22 @@
         #tab1-con1{padding-bottom: 3rem;}
         #tab1-con1,#tab1-con2{height: 100%;}
         .aui-tab{border-bottom: solid 1px #eee;background: #f5f5f5;height: 2.25rem;}
-        .aui-tab-item{font-size: .75rem;color: #666;width: 25%;}
+        .aui-tab-item{font-size: .75rem;color: #1f6ecf;width: 25%;}
         .aui-tab-item.aui-active{border:none;color: #000;position: relative;}
-        .aui-tab-item.aui-active:after{position: absolute;left: 40%;width: 20%;height: 2px;background: #00ae66;content: '';bottom:0;}
+        .aui-tab-item.aui-active:after{position: absolute;left: 40%;width: 20%;height: 2px;background: #1f6ecf;content: '';bottom:0;}
+        .shangjia_img img {width: 100%;height: 10rem;}
     </style>
 </head>
 <body>
 <header class="aui-bar aui-bar-nav">
-    <a class="aui-pull-left aui-btn">
-        <span class="aui-iconfont aui-icon-left"></span>
-    </a>
-    <div class="aui-title">商品</div>
-    <div class="aui-pull-right"></div>
+    {{--<a class="aui-pull-left aui-btn">--}}
+        {{--<span class="aui-iconfont aui-icon-left"></span>--}}
+    {{--</a>--}}
+    {{--<div class="aui-title">商品</div>--}}
+    {{--<div class="aui-pull-right"></div>--}}
+    <div class="shangjia_img">
+        <img src="{{asset('assets/order/choose/image/shangjia.jpeg')}}" alt="">
+    </div>
 </header>
 <div class="aui-tab" id="tab">
     <div class="aui-tab-item aui-active">选购</div>

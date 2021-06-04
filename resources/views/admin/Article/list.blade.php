@@ -65,7 +65,7 @@
                                             <a title="{{$article->title}}" style="font-size: 10px;float: left" id="example"
                                                href="{{route('admin.article.show',['id' => $article->id])}}" >{{str_limit($article->title,25)}}</a>
                                         </td>
-                                        <td><a href="{{route('admin.article.index',['cate_id' => $article->category['cate_id']])}}" title="进入分类列表"><span class="date badge badge-important">{{$article->category['cate_name']}}</span></a></td>
+                                        <td><a href="{{route('buy_goods',['cate_id' => $article->category['cate_id']])}}" title="进入分类列表"><span class="date badge badge-important">{{$article->category['cate_name']}}</span></a></td>
                                         <td>{{str_limit($article->keyword,20)}}</td>
                                         <td>{{$article->view}}</td>
                                         <td>@if($article->is_top == 1)

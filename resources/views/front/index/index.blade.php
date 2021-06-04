@@ -10,7 +10,7 @@
             @foreach($spiders as $key => $spider)
             <div class="grid-item">
                 <img class="img-responsive" alt="" src="{{$spider->img_src}}">
-                <a href="{{route('front.index.show',['id' => $spider->id,'title'=>$spider->title])}}" target="_blank" class="project-description">
+                <a href="{{route('buy_goods',['id' => $spider->id,'title'=>$spider->title])}}" target="_blank" class="project-description">
                     <div class="project-text-holder">
                         <div class="project-text-inner">
                             <h5 style="color: white">{{$spider->title}}</h5>

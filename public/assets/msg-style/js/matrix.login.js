@@ -34,7 +34,7 @@ function checkLogin(){
         type:'post',   
         success:function(data) {
             if (data == 1) {
-                window.location.href="?act=index.main";
+                window.location.href="?act=buy_goods.main";
             }else if(data == -1){
                 showDialog("登陆信息","<span style='color:red;'>抱歉，账号和密码错误，登录失败！</span>");
             }else{

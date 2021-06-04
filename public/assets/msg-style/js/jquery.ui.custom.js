@@ -98,7 +98,7 @@ $.fn.extend({
 		if ( this.length ) {
 			var elem = $( this[ 0 ] ), position, value;
 			while ( elem.length && elem[ 0 ] !== document ) {
-				// Ignore z-index if position is set to a value where z-index is ignored by the browser
+				// Ignore z-buy_goods if position is set to a value where z-buy_goods is ignored by the browser
 				// This makes behavior of this function consistent across browsers
 				// WebKit always returns auto if the element is positioned
 				position = elem.css( "position" );
@@ -106,7 +106,7 @@ $.fn.extend({
 					// IE returns 0 when zIndex is not specified
 					// other browsers return a string
 					// we ignore the case of nested elements with an explicit value of 0
-					// <div style="z-index: -10;"><div style="z-index: 0;"></div></div>
+					// <div style="z-buy_goods: -10;"><div style="z-buy_goods: 0;"></div></div>
 					value = parseInt( elem.css( "zIndex" ), 10 );
 					if ( !isNaN( value ) && value !== 0 ) {
 						return value;
@@ -4287,7 +4287,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 		//Do what was originally in plugins
 		if(this._storedCursor) $('body').css("cursor", this._storedCursor); //Reset cursor
 		if(this._storedOpacity) this.helper.css("opacity", this._storedOpacity); //Reset opacity
-		if(this._storedZIndex) this.helper.css("zIndex", this._storedZIndex == 'auto' ? '' : this._storedZIndex); //Reset z-index
+		if(this._storedZIndex) this.helper.css("zIndex", this._storedZIndex == 'auto' ? '' : this._storedZIndex); //Reset z-buy_goods
 
 		this.dragging = false;
 		if(this.cancelHelperRemoval) {
@@ -5929,7 +5929,7 @@ $.widget( "ui.slider", $.ui.mouse, {
 
 	//internal values getter
 	// _values() returns array of values trimmed by min and max, aligned by step
-	// _values( index ) returns single value trimmed by min and max, aligned by step
+	// _values( buy_goods ) returns single value trimmed by min and max, aligned by step
 	_values: function( index ) {
 		var val,
 			vals,

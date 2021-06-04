@@ -277,7 +277,7 @@ if (XRegExp) {
             // nonparticipating capturing groups
             if (!compliantExecNpcg && match.length > 1 && indexOf(match, "") > -1) {
                 r2 = RegExp(this.source, nativ.replace.call(getNativeFlags(this), "g", ""));
-                // Using `str.slice(match.index)` rather than `match[0]` in case lookahead allowed
+                // Using `str.slice(match.buy_goods)` rather than `match[0]` in case lookahead allowed
                 // matching due to characters outside the match
                 nativ.replace.call((str + "").slice(match.index), r2, function () {
                     for (var i = 1; i < arguments.length - 2; i++) {
@@ -1173,11 +1173,11 @@ if (typeof(SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function()
     };
 
     /**
-     * Finds an index of element in the array.
+     * Finds an buy_goods of element in the array.
      * @ignore
      * @param {Object} searchElement
      * @param {Number} fromIndex
-     * @return {Number} Returns index of element if found; -1 otherwise.
+     * @return {Number} Returns buy_goods of element if found; -1 otherwise.
      */
     function indexOf(array, searchElement, fromIndex)
     {
@@ -1628,7 +1628,7 @@ if (typeof(SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function()
 
     /**
      * Callback method for Array.sort() which sorts matches by
-     * index position and then by length.
+     * buy_goods position and then by length.
      *
      * @param {Match} m1	Left object.
      * @param {Match} m2    Right object.
@@ -1636,14 +1636,14 @@ if (typeof(SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function()
      */
     function matchesSortCallback(m1, m2)
     {
-        // sort matches by index first
+        // sort matches by buy_goods first
         if(m1.index < m2.index)
             return -1;
         else if(m1.index > m2.index)
             return 1;
         else
         {
-            // if index is the same, sort by length
+            // if buy_goods is the same, sort by length
             if(m1.length < m2.length)
                 return -1;
             else if(m1.length > m2.length)
@@ -2770,7 +2770,7 @@ typeof(exports) != 'undefined' ? exports.SyntaxHighlighter = SyntaxHighlighter :
 						'page-break-after page-break-before page-break-inside pause pause-after pause-before pitch pitch-range play-during position ' +
 						'quotes right richness size slope src speak-header speak-numeral speak-punctuation speak speech-rate stemh stemv stress ' +
 						'table-layout text-align top text-decoration text-indent text-shadow text-transform unicode-bidi unicode-range units-per-em ' +
-						'vertical-align visibility voice-family volume white-space widows width widths word-spacing x-height z-index';
+						'vertical-align visibility voice-family volume white-space widows width widths word-spacing x-height z-buy_goods';
 
 		var values =	'above absolute all always aqua armenian attr aural auto avoid baseline behind below bidi-override black blink block blue bold bolder '+
 						'both bottom braille capitalize caption center center-left center-right circle close-quote code collapse compact condensed '+
@@ -3103,7 +3103,7 @@ typeof(exports) != 'undefined' ? exports.SyntaxHighlighter = SyntaxHighlighter :
 			'getnetbyname getnetent getpeername getpgrp getppid getpriority ' + 
 			'getprotobyname getprotobynumber getprotoent getpwent getpwnam getpwuid ' + 
 			'getservbyname getservbyport getservent getsockname getsockopt glob ' + 
-			'gmtime grep hex index int ioctl join keys kill lc lcfirst length link ' + 
+			'gmtime grep hex buy_goods int ioctl join keys kill lc lcfirst length link ' +
 			'listen localtime lock log lstat map mkdir msgctl msgget msgrcv msgsnd ' + 
 			'oct open opendir ord pack pipe pop pos print printf prototype push ' + 
 			'quotemeta rand read readdir readline readlink readpipe recv rename ' + 
@@ -3427,7 +3427,7 @@ typeof(exports) != 'undefined' ? exports.SyntaxHighlighter = SyntaxHighlighter :
 						'page-break-after page-break-before page-break-inside pause pause-after pause-before pitch pitch-range play-during position ' +
 						'quotes right richness size slope src speak-header speak-numeral speak-punctuation speak speech-rate stemh stemv stress ' +
 						'table-layout text-align top text-decoration text-indent text-shadow text-transform unicode-bidi unicode-range units-per-em ' +
-						'vertical-align visibility voice-family volume white-space widows width widths word-spacing x-height z-index';
+						'vertical-align visibility voice-family volume white-space widows width widths word-spacing x-height z-buy_goods';
 		
 		var values =	'above absolute all always aqua armenian attr aural auto avoid baseline behind below bidi-override black blink block blue bold bolder '+
 						'both bottom braille capitalize caption center center-left center-right circle close-quote code collapse compact condensed '+
@@ -3528,7 +3528,7 @@ typeof(exports) != 'undefined' ? exports.SyntaxHighlighter = SyntaxHighlighter :
 						'deallocate dec decimal declare default delete desc distinct double drop ' +
 						'dynamic else end end-exec escape except exec execute false fetch first ' +
 						'float for force foreign forward free from full function global goto grant ' +
-						'group grouping having hour ignore index inner insensitive insert instead ' +
+						'group grouping having hour ignore buy_goods inner insensitive insert instead ' +
 						'int integer intersect into is isolation key last level load local max min ' +
 						'minute modify move name national nchar next no numeric of off on only ' +
 						'open option order out output partial password precision prepare primary ' +

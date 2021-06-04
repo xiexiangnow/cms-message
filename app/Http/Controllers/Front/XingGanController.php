@@ -23,7 +23,7 @@ class XingGanController extends Controller
         $result = [
             'category' => $category
         ];
-        return view('front.index.list',$result);
+        return view('front.buy_goods.list',$result);
     }
 
     /**

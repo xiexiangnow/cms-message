@@ -25,7 +25,7 @@ class LtUrl
 		if (empty($this->routingTable))
 		{
 			$this->routingTable = array('pattern' => ":module/:action/*",
-				'default' => array('module' => 'default', 'action' => 'index'),
+				'default' => array('module' => 'default', 'action' => 'buy_goods'),
 				'reqs' => array('module' => '[a-zA-Z0-9\.\-_]+',
 					'action' => '[a-zA-Z0-9\.\-_]+'
 					),

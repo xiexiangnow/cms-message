@@ -854,9 +854,9 @@ function stableSort(arr, sortFunction) {
 		sortValue,
 		i;
 
-	// Add index to each item
+	// Add buy_goods to each item
 	for (i = 0; i < length; i++) {
-		arr[i].ss_i = i; // stable sort index
+		arr[i].ss_i = i; // stable sort buy_goods
 	}
 
 	arr.sort(function (a, b) {
@@ -864,9 +864,9 @@ function stableSort(arr, sortFunction) {
 		return sortValue === 0 ? a.ss_i - b.ss_i : sortValue;
 	});
 
-	// Remove index from items
+	// Remove buy_goods from items
 	for (i = 0; i < length; i++) {
-		delete arr[i].ss_i; // stable sort index
+		delete arr[i].ss_i; // stable sort buy_goods
 	}
 }
 
@@ -1257,7 +1257,7 @@ pathAnim = {
 		getScript: $.getScript,
 		
 		/**
-		 * Return the index of an item in an array, or -1 if not found
+		 * Return the buy_goods of an item in an array, or -1 if not found
 		 */
 		inArray: $.inArray,
 		
@@ -2931,7 +2931,7 @@ SVGElement.prototype = {
 		}
 
 		// insert according to this and other elements' zIndex
-		if (parentWrapper.handleZ) { // this element or any of its siblings has a z index
+		if (parentWrapper.handleZ) { // this element or any of its siblings has a z buy_goods
 			for (i = 0; i < childNodes.length; i++) {
 				otherElement = childNodes[i];
 				otherZIndex = attr(otherElement, 'zIndex');
@@ -6360,7 +6360,7 @@ function StackItem(axis, options, isNegative, x, stackOption, stacking) {
 	// Initialize total value
 	this.total = null;
 
-	// This will keep each points' extremes stored by series.index
+	// This will keep each points' extremes stored by series.buy_goods
 	this.points = {};
 
 	// Save the stack option on the series configuration object, and whether to treat it as percent
@@ -6840,7 +6840,7 @@ Axis.prototype = {
 		erase(chart.axes, this);
 		erase(chart[key], this);
 		chart.options[key].splice(this.options.index, 1);
-		each(chart[key], function (axis, i) { // Re-index, #1706
+		each(chart[key], function (axis, i) { // Re-buy_goods, #1706
 			axis.options.index = i;
 		});
 		this.destroy();
@@ -9110,7 +9110,7 @@ Pointer.prototype = {
 	},
 	
 	/**
-	 * Return the index in the tooltipPoints array, corresponding to pixel position in 
+	 * Return the buy_goods in the tooltipPoints array, corresponding to pixel position in
 	 * the plot area.
 	 */
 	getIndex: function (e) {
@@ -12777,7 +12777,7 @@ Series.prototype = {
 		chartSeries.push(series);
 		series._i = chartSeries.length - 1;
 		
-		// Sort series according to index option (#248, #1123)
+		// Sort series according to buy_goods option (#248, #1123)
 		stableSort(chartSeries, function (a, b) {
 			return pick(a.options.index, a._i) - pick(b.options.index, a._i);
 		});
@@ -16647,7 +16647,7 @@ var PieSeries = {
 				}
 	
 				// The label goes to the nearest open slot, but not closer to the edge than
-				// the label's index.
+				// the label's buy_goods.
 				for (j = 0; j < length; j++) {
 	
 					point = points[j];
@@ -16657,7 +16657,7 @@ var PieSeries = {
 						distance,
 						slotI;
 	
-					// find the closest slot index
+					// find the closest slot buy_goods
 					for (slotI = 0; slotI < slotsLength; slotI++) {
 						distance = mathAbs(slots[slotI] - labelPos[1]);
 						if (distance < closest) {
@@ -16666,7 +16666,7 @@ var PieSeries = {
 						}
 					}
 	
-					// if that slot index is closer to the edges of the slots, move it
+					// if that slot buy_goods is closer to the edges of the slots, move it
 					// to the closest appropriate slot
 					if (slotIndex < j && slots[j] !== null) { // cluster at the top
 						slotIndex = j;

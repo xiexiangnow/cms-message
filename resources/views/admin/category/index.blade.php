@@ -54,9 +54,9 @@
                                     <td class="tc">{{$category->cate_id}}</td>
                                     <td>
                                             @if($category->cate_pid == 0)
-                                                <a href="{{route('admin.article.index',['cate_id' => $category->cate_id])}}"><b>{{$category->cate_name}}</b></a>
+                                                <a href="{{route('buy_goods',['cate_id' => $category->cate_id])}}"><b>{{$category->cate_name}}</b></a>
                                             @else
-                                                <a href="{{route('admin.article.index',['cate_id' => $category->cate_id])}}">{{$category->cate_name}}</a>
+                                                <a href="{{route('buy_goods',['cate_id' => $category->cate_id])}}">{{$category->cate_name}}</a>
                                             @endif
                                     </td>
                                     <td>{{$category->cate_title}}</td>

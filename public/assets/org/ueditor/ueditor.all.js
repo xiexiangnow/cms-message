@@ -16868,7 +16868,7 @@ UE.plugins['fiximgclick'] = (function () {
                     resizer = me.resizer = document.createElement('div');
 
                 cover.id = me.editor.ui.id + '_imagescale_cover';
-                cover.style.cssText = 'position:absolute;display:none;z-index:' + (me.editor.options.zIndex) + ';filter:alpha(opacity=0); opacity:0;background:#CCC;';
+                cover.style.cssText = 'position:absolute;display:none;z-buy_goods:' + (me.editor.options.zIndex) + ';filter:alpha(opacity=0); opacity:0;background:#CCC;';
                 domUtils.on(cover, 'mousedown click', function () {
                     me.hide();
                 });
@@ -16879,7 +16879,7 @@ UE.plugins['fiximgclick'] = (function () {
                 resizer.id = me.editor.ui.id + '_imagescale';
                 resizer.className = 'edui-editor-imagescale';
                 resizer.innerHTML = hands.join('');
-                resizer.style.cssText += ';display:none;border:1px solid #3b77ff;z-index:' + (me.editor.options.zIndex) + ';';
+                resizer.style.cssText += ';display:none;border:1px solid #3b77ff;z-buy_goods:' + (me.editor.options.zIndex) + ';';
 
                 me.editor.ui.getDom().appendChild(cover);
                 me.editor.ui.getDom().appendChild(resizer);
@@ -25229,7 +25229,7 @@ UE.ui = baidu.editor.ui = {};
         getHtmlTpl: function (){
             return '<div id="##" class="edui-popup %%" onmousedown="return false;">' +
                 ' <div id="##_body" class="edui-popup-body">' +
-                ' <iframe style="position:absolute;z-index:-1;left:0;top:0;background-color: transparent;" frameborder="0" width="100%" height="100%" src="about:blank"></iframe>' +
+                ' <iframe style="position:absolute;z-buy_goods:-1;left:0;top:0;background-color: transparent;" frameborder="0" width="100%" height="100%" src="about:blank"></iframe>' +
                 ' <div class="edui-shadow"></div>' +
                 ' <div id="##_content" class="edui-popup-content">' +
                 this.getContentHtmlTpl() +
@@ -26256,7 +26256,7 @@ UE.ui = baidu.editor.ui = {};
 
                 tempIndex === 0 && tmpl.push('<tr>');
 
-                tmpl.push( '<td index="'+ i +'" ' + tempClassName + ' stateful><div class="edui-icon edui-'+ alignType[ tempIndex ] +'"></div></td>' );
+                tmpl.push( '<td buy_goods="'+ i +'" ' + tempClassName + ' stateful><div class="edui-icon edui-'+ alignType[ tempIndex ] +'"></div></td>' );
 
                 tempIndex === 2 && tmpl.push('</tr>');
 
@@ -27568,7 +27568,7 @@ UE.ui = baidu.editor.ui = {};
             return '<div id="##" class="edui-message %%">' +
             ' <div id="##_closer" class="edui-message-closer">×</div>' +
             ' <div id="##_body" class="edui-message-body edui-message-type-info">' +
-            ' <iframe style="position:absolute;z-index:-1;left:0;top:0;background-color: transparent;" frameborder="0" width="100%" height="100%" src="about:blank"></iframe>' +
+            ' <iframe style="position:absolute;z-buy_goods:-1;left:0;top:0;background-color: transparent;" frameborder="0" width="100%" height="100%" src="about:blank"></iframe>' +
             ' <div class="edui-shadow"></div>' +
             ' <div id="##_content" class="edui-message-content">' +
             '  </div>' +
@@ -28992,7 +28992,7 @@ UE.ui = baidu.editor.ui = {};
         _updateFullScreen:function () {
             if (this._fullscreen) {
                 var vpRect = uiUtils.getViewportRect();
-                this.getDom().style.cssText = 'border:0;position:absolute;left:0;top:' + (this.editor.options.topOffset || 0) + 'px;width:' + vpRect.width + 'px;height:' + vpRect.height + 'px;z-index:' + (this.getDom().style.zIndex * 1 + 100);
+                this.getDom().style.cssText = 'border:0;position:absolute;left:0;top:' + (this.editor.options.topOffset || 0) + 'px;width:' + vpRect.width + 'px;height:' + vpRect.height + 'px;z-buy_goods:' + (this.getDom().style.zIndex * 1 + 100);
                 uiUtils.setViewportOffset(this.getDom(), { left:0, top:this.editor.options.topOffset || 0 });
                 this.editor.setHeight(vpRect.height - this.getDom('toolbarbox').offsetHeight - this.getDom('bottombar').offsetHeight - (this.editor.options.topOffset || 0),true);
                 //不手动调一下，会导致全屏失效
@@ -29060,7 +29060,7 @@ UE.ui = baidu.editor.ui = {};
                 }
 
                 scalelayer.style.cssText = "position:absolute;left:0;display:;top:0;background-color:#41ABFF;opacity:0.4;filter: Alpha(opacity=40);width:" + editorHolder.offsetWidth + "px;height:"
-                    + editorHolder.offsetHeight + "px;z-index:" + (editor.options.zIndex + 1);
+                    + editorHolder.offsetHeight + "px;z-buy_goods:" + (editor.options.zIndex + 1);
 
                 domUtils.on(doc, "mousemove", move);
                 domUtils.on(editorDocument, "mouseup", up);

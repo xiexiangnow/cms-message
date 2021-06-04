@@ -32,14 +32,14 @@
     <nav class="sidebar">
         <div class="navbar-collapse" id="navbar-collapse">
             <div class="site-header hidden-xs">
-                <a class="site-brand" href="{{url('front/index')}}" title="">
+                <a class="site-brand" href="{{url('buy_goods')}}" title="">
                     <img class="img-responsive site-logo" alt="" src="{{asset('assets/front/assets/images/logo.png')}}" style="width: 50px;height: 32px">
                     <span style="color: #FF6067">777美图网</span>
                 </a>
                 <p>The visual effect can make people produce uncontrollable hormones, which will bring you a little pleasure after work.</p>
             </div>
             <ul class="nav">
-                <li><a href="{{url('front/index')}}" title="">首页</a></li>
+                <li><a href="{{url('buy_goods')}}" title="">首页</a></li>
                 <li><a href="{{url('front/xinggan')}}" title="">性感美女</a></li>
                 <li><a href="./services.html" title="">明星美女</a></li>
                 <li><a href="./contact.html" title="">风景图片</a></li>

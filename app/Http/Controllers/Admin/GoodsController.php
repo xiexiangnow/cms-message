@@ -28,7 +28,7 @@ class GoodsController extends CommonController
         $params = [
             'goods' => Goods::getGoods($where)
         ];
-        return view('admin.goods.index',$params);
+        return view('admin.goods.buy_goods',$params);
     }
 
     /**

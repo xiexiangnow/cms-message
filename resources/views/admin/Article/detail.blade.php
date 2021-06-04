@@ -21,7 +21,7 @@
                 <div class="widget-box">
                     <div class="widget-title"> <span class="icon"> <i class="icon-screenshot"></i> </span>
                         <h5>
-                            分类：<code><a href="{{route('admin.article.index',['cate_id' => $detail->category['cate_id']])}}">{{$detail->category['cate_name']}}</a></code>  &nbsp;&nbsp;
+                            分类：<code><a href="{{route('buy_goods',['cate_id' => $detail->category['cate_id']])}}">{{$detail->category['cate_name']}}</a></code>  &nbsp;&nbsp;
                             编者：{{$detail->author}}  &nbsp;&nbsp;
                             阅读数：{{$detail->view}}  &nbsp;&nbsp;
                             创建时间： {{$detail->created_at}}

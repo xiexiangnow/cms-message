@@ -39,7 +39,7 @@ class CategoryController extends CommonController
         $result = [
             'categories' => $this->categoryService->getTree()
         ];
-        return view('admin.category.index',$result);
+        return view('admin.category.buy_goods',$result);
     }
 
     /**

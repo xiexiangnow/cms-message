@@ -147,7 +147,7 @@
         }
         if (type === 1 || type === 2) {
             var loadClass = 'zeromodal-loading' + type;
-            $('body').append('<div role="zeromodal-loading" zero-unique-loading="' + params.unique + '" class="' + loadClass + '" style="z-index:' + _tmp_last_zindex + ';top:' + _top + 'px;"></div>');
+            $('body').append('<div role="zeromodal-loading" zero-unique-loading="' + params.unique + '" class="' + loadClass + '" style="z-buy_goods:' + _tmp_last_zindex + ';top:' + _top + 'px;"></div>');
 
         } else if (_isIn([3, 4, 5, 6], type)) {
             var loader = {};
@@ -171,7 +171,7 @@
                     break;
             }
 
-            var _html = '<div role="zeromodal-loading" zero-unique-loading="' + params.unique + '" class="' + loader.className + '" style="z-index:' + _tmp_last_zindex + ';left:46%;top:' + _top + 'px;">';
+            var _html = '<div role="zeromodal-loading" zero-unique-loading="' + params.unique + '" class="' + loader.className + '" style="z-buy_goods:' + _tmp_last_zindex + ';left:46%;top:' + _top + 'px;">';
             for (var i = 0; i < loader.containerCount; i++) {
                 _html += '  <div></div>';
             }
@@ -213,12 +213,12 @@
                 break;
         }
 
-        var _html = '<div zero-unique-loading="' + params.unique + '" class="' + loader.className + '" style="z-index:' + _tmp_last_zindex + ';left:46%;top:' + _top + 'px;">';
+        var _html = '<div zero-unique-loading="' + params.unique + '" class="' + loader.className + '" style="z-buy_goods:' + _tmp_last_zindex + ';left:46%;top:' + _top + 'px;">';
         for (var i = 0; i < loader.containerCount; i++) {
             _html += '  <div></div>';
         }
         _html += '  </div>';
-        _html += '  <div zero-unique-loading="' + params.unique + '" class="zeromodal-progress-content" style="z-index:' + _tmp_last_zindex + ';top:' + (_top + 64) + 'px;"><span id="progess_content_' + params.unique + '"></span></div>';
+        _html += '  <div zero-unique-loading="' + params.unique + '" class="zeromodal-progress-content" style="z-buy_goods:' + _tmp_last_zindex + ';top:' + (_top + 64) + 'px;"><span id="progess_content_' + params.unique + '"></span></div>';
         _html += '';
         $('body').append(_html);
 
@@ -265,7 +265,7 @@
             _speed = speed;
         }
 
-        var _html = '<div class="zeromodal-progress" style="top:' + _top + 'px;left:' + _left + 'px;z-index:' + _tmp_last_zindex + '">';
+        var _html = '<div class="zeromodal-progress" style="top:' + _top + 'px;left:' + _left + 'px;z-buy_goods:' + _tmp_last_zindex + '">';
         _html += '      <div zeromodal-progress-bar="' + params.unique + '" class="zeromodal-progress-bar" style="width: 0%; background: #92c26a;">';
         _html += '          <span class="zeromodal-progress-icon zeromodal-fa zeromodal-fa-check" style="border-color:#92c26a; color:#92c26a;"><div zeromodal-progress-val="' + params.unique + '" class="zeromodal-progress-val">&nbsp;0%</div></span>';
         _html += '      </div>';
@@ -426,7 +426,7 @@
 
         // 是否需要显示遮罩层
         if (opt.overlay) {
-            var _overlay = $('<div zero-unique-overlay="' + opt.unique + '" class="zeromodal-overlay" style="opacity:' + opt.opacity + ';z-index:' + _tmp_last_zindex + ';width:' + _width + 'px;height:' + _height + 'px"></div>');
+            var _overlay = $('<div zero-unique-overlay="' + opt.unique + '" class="zeromodal-overlay" style="opacity:' + opt.opacity + ';z-buy_goods:' + _tmp_last_zindex + ';width:' + _width + 'px;height:' + _height + 'px"></div>');
             $('body').append(_overlay);
 
             // 是否允许点击遮罩层关闭modal
@@ -472,7 +472,7 @@
         var _top = $(window).scrollTop() + Math.ceil(($(window).height() - _height) / 3);
 
         //// 构建容器
-        var _container = $('<div zero-unique-container="' + opt.unique + '" class="zeromodal-container" style="z-index:' + _tmp_last_zindex + ';width:' + _width + 'px;height:' + _height + 'px;left:' + _left + 'px;top:' + (opt.transition ? _top - 50 : _top) + 'px"></div>');
+        var _container = $('<div zero-unique-container="' + opt.unique + '" class="zeromodal-container" style="z-buy_goods:' + _tmp_last_zindex + ';width:' + _width + 'px;height:' + _height + 'px;left:' + _left + 'px;top:' + (opt.transition ? _top - 50 : _top) + 'px"></div>');
         $('body').append(_container);
 
         //// 判断是否需要允许拖拽显示层

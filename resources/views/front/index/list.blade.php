@@ -12,11 +12,11 @@
         </div>
         @foreach($category as $key => $item)
         <div class="col-xs-12 col-md-3 section-container-spacer">
-            <a href="{{route('front.index.show',['id'=>$key,'title'=> $item['name']])}}" target="_blank" class="cover-img" title="{{$item['name']}}"><img class="img-responsive" alt="{{$item['title']}}" src="{{$item['cover_img']}}"></a>
+            <a href="{{route('buy_goods',['id'=>$key,'title'=> $item['name']])}}" target="_blank" class="cover-img" title="{{$item['name']}}"><img class="img-responsive" alt="{{$item['title']}}" src="{{$item['cover_img']}}"></a>
             {{--<h5>{{ mb_substr($item['name'],0,15,"UTF8") }}</h5>--}}
             <h5 style="display: none">{{$item['name']}}</h5>
             {{--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>--}}
-            {{--<a href="{{route('front.index.show',['id'=>$key,'title'=> $item['title']])}}" class="btn btn-primary" title=""> Get in touch</a>--}}
+            {{--<a href="{{route('front.buy_goods.show',['id'=>$key,'title'=> $item['title']])}}" class="btn btn-primary" title=""> Get in touch</a>--}}
         </div>
         @endforeach
 

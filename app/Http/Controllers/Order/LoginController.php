@@ -26,7 +26,7 @@ class LoginController extends Controller
 //            if($user = $this->userService->checkUser($request->all())){
 //                // 存session
 //                session(['user' => $user]);
-//                return redirect('admin/index');
+//                return redirect('admin/buy_goods');
 //            }
 
             return redirect('order/index');

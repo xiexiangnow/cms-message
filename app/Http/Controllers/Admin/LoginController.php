@@ -38,7 +38,7 @@ class LoginController extends CommonController
             if($user = $this->userService->checkUser($request->all())){
                 // 存session
                 session(['user' => $user]);
-                return redirect('admin/index');
+                return redirect('admin/buy_goods');
             }
             return back()->with('msg','用户名或者密码错误！');
         }

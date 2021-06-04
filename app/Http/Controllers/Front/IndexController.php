@@ -27,7 +27,7 @@ class IndexController extends Controller
         $result = [
             'spiders' => $spide->getIndexShowList()
         ];
-        return view('front.index.index',$result);
+        return view('front.buy_goods.buy_goods',$result);
     }
 
 
@@ -71,7 +71,7 @@ class IndexController extends Controller
             'pic_list' => $data['data'],
             'title'    => $title
         ];
-        return view('front.index.detail',$result);
+        return view('front.buy_goods.detail',$result);
     }
 
     /**

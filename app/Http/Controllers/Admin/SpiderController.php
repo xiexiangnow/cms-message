@@ -24,7 +24,7 @@ class SpiderController extends Controller
             'spiders' => $spider->get()
         ];
 
-        return view('admin.spider.index',$result);
+        return view('admin.spider.buy_goods',$result);
     }
 
     /**

@@ -28,7 +28,7 @@ class IndexController extends CommonController
         $params = [
             'integral'  => User::getUserById(session('user')->id)->integral   //积分查询
         ];
-        return view('admin.index',$params);
+        return view('admin.buy_goods',$params);
     }
 
     /**

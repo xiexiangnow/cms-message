@@ -32,7 +32,7 @@ class ManagerController extends Controller
             'row'      => $request->get('row'),
             'status'  => $request->get('status')
         ];
-        return view('admin.manager.index',$params);
+        return view('admin.manager.buy_goods',$params);
     }
 
     /**

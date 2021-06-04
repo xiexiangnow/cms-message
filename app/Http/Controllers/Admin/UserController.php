@@ -23,7 +23,7 @@ class UserController extends CommonController
         $result = [
             'users' => User::getAll()
         ];
-        return view('admin.user.index',$result);
+        return view('admin.user.buy_goods',$result);
     }
 
     /**

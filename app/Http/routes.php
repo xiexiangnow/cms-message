@@ -36,7 +36,7 @@ DRoute::version('v1', [
     DRoute::group([
         'namespace' => 'Project',
     ],function(){
-        DRoute::resource('projects','ProjectController',['only' => ['index']]);
+        DRoute::resource('projects','ProjectController',['only' => ['buy_goods']]);
     });
 });
 
@@ -64,7 +64,7 @@ Route::group([
     'prefix'     => 'admin'
 ], function () {
     // - 后台首页
-    Route::get('index','IndexController@index');
+    Route::get('buy_goods','IndexController@buy_goods');
 
     // - 网站信息页面
     Route::get('info','IndexController@info');
@@ -76,25 +76,25 @@ Route::group([
     Route::any('modify_pass','IndexController@modifyPass');
 
     // - 分类
-    Route::resource('category','CategoryController',['only'=>['index','create','store','edit','update','destroy']]);
+    Route::resource('category','CategoryController',['only'=>['buy_goods','create','store','edit','update','destroy']]);
 
     // - 分类排序
     Route::post('cate/cate_order','CategoryController@cateOrder');
 
     // - 文章管理
-    Route::resource('article','ArticleController',['only'=>['index','create','edit','update','destroy','store','show']]);
+    Route::resource('article','ArticleController',['only'=>['buy_goods','create','edit','update','destroy','store','show']]);
 
     // - 图片上传
     Route::any('article/upload','ArticleController@upload');
 
     // - tag管理
-    Route::resource('tag','TagController',['only'=>['index','create','store','edit','update','destroy']]);
+    Route::resource('tag','TagController',['only'=>['buy_goods','create','store','edit','update','destroy']]);
 
     // - 用户管理
-    Route::resource('user','UserController',['only'=>['index','create','store','edit','update','destroy']]);
+    Route::resource('user','UserController',['only'=>['buy_goods','create','store','edit','update','destroy']]);
 
     //- 商品管理
-    Route::resource('goods','GoodsController',['only'=>['index','create','store','edit','update','destroy','show']]);
+    Route::resource('goods','GoodsController',['only'=>['buy_goods','create','store','edit','update','destroy','show']]);
 
     // -商品结算页面
     Route::get('settlement/{id}','GoodsController@settlement');
@@ -118,10 +118,10 @@ Route::group([
     Route::get('integral','UserController@Integral');
 
     //ipr管理员信息
-    Route::resource('manager','ManagerController',['only' => ['index','show']]);
+    Route::resource('manager','ManagerController',['only' => ['buy_goods','show']]);
 
     //美女图片
-    Route::resource('spider','SpiderController',['only' => ['index','show']]);
+    Route::resource('spider','SpiderController',['only' => ['buy_goods','show']]);
 
     //美女图片首页显示
     Route::any('goIndex','SpiderController@goIndex');
@@ -144,7 +144,7 @@ Route::group([
     'prefix'     => 'front'
 ], function () {
     //前端首页
-    Route::resource('index','IndexController');
+    Route::resource('buy_goods','IndexController');
 
     //性感美女
     Route::resource('xinggan','XingGanController');
@@ -167,25 +167,20 @@ Route::group([
 
 Route::group([
     'namespace' => 'Order',
-], function () {
-    // - 登录界面
-    Route::any('order/login','LoginController@login');
-
-});
-
-Route::group([
-    'namespace'  => 'Order',
     'prefix'     => 'order'
 ], function () {
-    //前端首页
+    // - 登录界面
+    Route::any('login','LoginController@login');
+
+    //首页
     Route::resource('index','IndexController');
 
-//    //登录
-//    Route::resource('login','LoginController');
+    // 订购页面
+    Route::resource('buy_goods','BuyGoodsController');
 
-    Route::any('worker','GearmandController@worker');
 
 });
+
 
 
 

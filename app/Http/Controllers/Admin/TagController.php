@@ -21,7 +21,7 @@ class TagController extends Controller
         $result =[
             'tags' => $tag->get()
         ];
-        return view('admin.tag.index',$result);
+        return view('admin.tag.buy_goods',$result);
     }
 
     /**
